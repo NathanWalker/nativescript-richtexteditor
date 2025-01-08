@@ -14,12 +14,15 @@
     "@angular/router": "~19.0.0",
     "@nativescript/angular": "^19.0.0",
     "@nativescript/core": "~8.8.0",
+    "@nativescript/swift-ui": "^4.0.0",
     "rxjs": "~7.8.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~19.0.0",
     "@angular/compiler-cli": "~19.0.0",
+    "@nativescript/android": "8.9.0-dev.0",
+    "@nativescript/ios": "8.8.2",
     "@nativescript/tailwind": "^2.1.0",
     "@nativescript/types": "~8.8.0",
     "@nativescript/webpack": "~5.0.0",

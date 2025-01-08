@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mds {
+  font-family: "Material Symbols Outlined", "MaterialSymbolsOutlined";
+  font-weight: 400;
+  vertical-align: middle;
+}

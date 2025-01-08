@@ -1,0 +1,64 @@
+<ActionBar [title]="'NativeScript Rich ' + (isApple ? 'Text ' : '') + 'Editor'">
+  <ActionItem
+    ios.position="left"
+    android.position="actionBar"
+    (tap)="toggleToolbar()"
+    [text]="isApple ? 'Toolbar' : 'Video'"
+  ></ActionItem>
+  <ActionItem
+    ios.systemIcon="2"
+    ios.position="right"
+    android.position="actionBar"
+    (tap)="openTools()"
+    android:text="Link"
+  ></ActionItem>
+</ActionBar>
+
+<GridLayout rows="auto,*">
+  <android>
+    <!-- demonstrates custom platform handling if/when needed -->
+    <GridLayout rows="auto" columns="*,*,*,*,*,*" class="p-2">
+      <Label
+        icon="format_italic"
+        class="text-lg text-center"
+        (tap)="androidTool('italic')"
+      ></Label>
+      <Label
+        col="1"
+        icon="format_bold"
+        class="text-lg text-center"
+        (tap)="androidTool('bold')"
+      ></Label>
+      <Label
+        col="2"
+        icon="format_underlined"
+        class="text-lg text-center"
+        (tap)="androidTool('underline')"
+      ></Label>
+      <Label
+        col="3"
+        icon="strikethrough_s"
+        class="text-lg text-center"
+        (tap)="androidTool('strikethrough')"
+      ></Label>
+      <Label
+        col="4"
+        icon="text_decrease"
+        class="text-lg text-center"
+        (tap)="androidTool('text_decrease')"
+      ></Label>
+      <Label
+        col="5"
+        icon="text_increase"
+        class="text-lg text-center"
+        (tap)="androidTool('text_increase')"
+      ></Label>
+    </GridLayout>
+  </android>
+  <RichEditor
+    row="1"
+    class="m-4"
+    [data]="data"
+    (loaded)="loadedEditor($event)"
+  />
+</GridLayout>
