@@ -1,6 +1,6 @@
 ## Rich Text Editor Example for NativeScript
 
-Demonstrating usage of Andriod and iOS platform open source SDK/Libraries with NativeScript for a Rich Text Editor.
+Demonstrating usage of Android and iOS platform open source SDK/Libraries with NativeScript for a Rich Text Editor.
 
 https://github.com/user-attachments/assets/e6e9e0ff-4283-48c7-a26d-692f63050cde
 
