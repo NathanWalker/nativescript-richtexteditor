@@ -8,7 +8,7 @@ export class RichEditor extends SwiftUI implements RichEditorType {
 
   constructor() {
     super();
-    // make each usage unique so could use many throughout app is desired
+    // make each usage unique so could use many throughout app if desired
     const swiftId = `richEditor-${crypto.randomUUID()}`;
     if (Utils.SDK_VERSION >= 17) {
       registerSwiftUI(swiftId, (view) => {
@@ -75,6 +75,8 @@ function attributedStringToHTML(attributedString: NSAttributedString): string {
         const rgba = (uiColor as any).toRGBA();
         style += `color: ${rgba};`;
       }
+
+      // Check for text alignment 
       const paragraphStyle: NSParagraphStyle = attributes.objectForKey(
         NSParagraphStyleAttributeName
       );
