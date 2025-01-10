@@ -59,6 +59,7 @@
     row="1"
     class="m-4"
     [data]="data"
+    (textChange)="textChange($event)"
     (loaded)="loadedEditor($event)"
   />
 </GridLayout>

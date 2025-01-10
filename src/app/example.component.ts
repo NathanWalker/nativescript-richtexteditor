@@ -87,6 +87,10 @@ export class ExampleComponent {
     }
   }
 
+  textChange(args) {
+    console.log('textChange:', args.data);
+  }
+
   loadedEditor(args) {
     this.editor = args.object;
   }

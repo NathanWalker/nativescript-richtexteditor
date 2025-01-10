@@ -9,8 +9,11 @@ export class RichEditor extends RichEditorCommon {
 
   initNativeView() {
     this.editor.setOnTextChangeListener(new jp.wasabeef.richeditor.RichEditor.OnTextChangeListener({
-      onTextChange(text) {
-          console.log('text change:', text);
+      onTextChange: (text) => {
+          this.notify({
+            eventName: 'textChange',
+            data: text,
+          });
       },
     }))
   }

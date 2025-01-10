@@ -20,14 +20,25 @@ struct RichEditor: View {
             RichTextFormat.Toolbar(context: context)
             #endif
             RichTextEditor(
-                text: Binding(
-                    get: { data.nonOptionalText },
-                    set: { newValue in data.text = newValue }
-                ),
-                context: context
+                    text: Binding(
+                        get: { data.nonOptionalText },
+                        set: { newValue in
+                            // Only fires when actual text characters change
+                            // Not when styles are applied necessarily
+                            data.text = newValue
+                            data.onEvent!(["textChange": newValue])
+                        }
+                    ),
+                    context: context
             ) {
                 $0.textContentInset = CGSize(width: data.insetWidth, height: data.insetHeight)
             }
+            // This could be used to pick up style changes
+            // Just want to decide how to identify the styles
+            // These come through as enums at the moment
+            // .onReceive(context.objectWillChange) {
+            //     data.onEvent!(["contextChange": context.styles])
+            // }
             // Use this to just view the text:
             // RichTextViewer(document.text)
             #if os(iOS)
